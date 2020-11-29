@@ -22,4 +22,8 @@ Here is the comaparision between the three approaches. The producer consumer app
 ![alt text](https://drive.google.com/uc?export=view&id=1AXYSHSz5EwBV5i4TRODA5u_EhnX_tkCB)
 
 # Usage Instructions
+To zip 3 files(file1, file2, file3) using huffmann encoding follow below steps.
 make all
+./main h file1.txt file2.txt file3.txt
+
+Compressed files are stored in "compressed" folder and you can find the test files in the "test_files" folder.
