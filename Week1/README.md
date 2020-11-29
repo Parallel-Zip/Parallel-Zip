@@ -12,12 +12,13 @@
    /main zip 2 file1.txt file2.txt folder
    
    Creates compressed files. No encodings file required hence not created.
+   
 3.To unzip
-  Huffman
-  ./main unzip 1 compressed_file.txt folderzipped  
-  Runlength
-  ./main unzip 2 compressed_file.txt folderzipped 
+Huffman
+./main unzip 1 compressed_file.txt folderzipped  
+Runlength
+./main unzip 2 compressed_file.txt folderzipped 
 
-  For file, converts it to uncompressed file.
-  For folder, creates a new folder with uncompressed files, named 'folderzipped_unzipped'
+For file, converts it to uncompressed file.
+For folder, creates a new folder with uncompressed files, named 'folderzipped_unzipped'
 
