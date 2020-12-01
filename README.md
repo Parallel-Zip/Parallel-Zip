@@ -1,7 +1,9 @@
 ### Usage Instructions
 
 To zip 3 files(file1, file2, file3) using huffmann encoding follow below steps.
+</br>
 make all
+</br>
 ./main h file1.txt file2.txt file3.txt
 </br>
 ### The aim of the project is to zip the files parallely by building a parallelized version of non concurrent zip.
@@ -26,7 +28,7 @@ The file is broken into chunks(pages of size 10MB) by the producer and these pag
 ## Finding optimum buffer-size and pagesize
 
 <img src="https://drive.google.com/uc?export=view&id=1mayJU4FXhwkSMCmghPzzBTaHiXLrjuo3" height="300" >
-From the observations of above graphs, buffersize of 20 and pagesize of 10 MB is used in the algorithm.
+Buffersize of 20 and pagesize of 10 MB is used in the algorithm(extimated from above graphs)
 
 ## Varying number of consumer threads
 
