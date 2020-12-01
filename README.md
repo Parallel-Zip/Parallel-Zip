@@ -29,15 +29,15 @@ This is a producer-consumer based approach. We have considered a single producer
 ## Finding optimum buffersize and pagesize
 
 <img src="https://drive.google.com/uc?export=view&id=1mayJU4FXhwkSMCmghPzzBTaHiXLrjuo3" height="300" >
-### Inferences
-#### Varying only buffer size does not increase or decrease time.
-#### Takes more time for very large or very small page size.
+## Inferences
+1. Varying only buffer size does not increase or decrease time.
+2. Takes more time for very large or very small page size.
 
 ## Varying number of consumer threads
 
 <img src="https://drive.google.com/uc?export=view&id=1dnbvZTK75g4J5syXFcjGx0uf8C10NcC9" height="300" >
-### Inferences
-#### Increasing the number of consumer threads to more than number of cores does not decrease time. 
+## Inferences
+1. Increasing the number of consumer threads to more than number of cores does not decrease time. 
 
 
 # Results
@@ -56,6 +56,6 @@ size after compression using:-
 It can be seen that for larger files, their compression algorithm proved to be much better than ours, while there was no observable difference in the time taken by all the tools for zipping.
 
 # Limitations and Scope
-Parallel zip has been implemented for text files and in future it can be extentded to zip directories and other formats like .jpeg</br>
-Approach can also be extended to unzip files parallely.</br>
-Although mmap helps to reduce overhead and equally divide the workload between thread, but it also results in waste of memory because space equal to integral multiple of page size is reserved for each file.
+1. Parallel zip has been implemented for text files and in future it can be extentded to zip directories and other formats like .jpeg</br>
+2. Approach can also be extended to unzip files parallely.</br>
+3. Although mmap helps to reduce overhead and equally divide the workload between thread, but it also results in waste of memory because space equal to integral multiple of page size is reserved for each file.
