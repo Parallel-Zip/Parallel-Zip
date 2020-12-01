@@ -8,7 +8,7 @@ make all
 </br>
 Compressed files are stored in "compressed" folder and you can find the test files in the "test_files" folder.
 
-### The aim of the project is to zip the files parallely by building a parallelized version of non concurrent zip.
+### The aim of the project was to zip multiple files (alpha-numeric text) parallely, and identify and resolve the Straggler's problem that occurs when we use multi-threading.
 # Sequential-Zip
 First we build a sequential zip using two encoding schemes, Huffmann and Run Length. All the code files related to sequential zip are included in the Week1 folder. 
 This was followed by optimizing the encoding schemes to get better performnace in terms of compression time and compressed file size.
@@ -16,33 +16,36 @@ This was followed by optimizing the encoding schemes to get better performnace i
 <img src="https://drive.google.com/uc?export=view&id=1BKiDVV7WW3lvMr8sCtwONoIEyRCnLjhc" >
 
 # Parallel-Zip
-In our first appraoch of adding concurrency to sequential zip, we created number of threads equal to the number of files that are needed to be zipped. Each file is zipped be a single thread parallely. This was better than the Sequential approach but the file with maximum size was deciding the compression time. As the files can be of unequal sizes, work was not equally divided between threads. 
+In our first appraoch of adding concurrency to sequential zip, we gave one file to each thread. This was better than the Sequential approach but the file with maximum size was deciding the compression time. As the files can be of unequal sizes, work was not equally divided between threads, and so the process did not put equal load on all cores.
 
 <img src="https://drive.google.com/uc?export=view&id=1OCBYqB6Gz7mM2IbEgnY6NDqGSLH6Fn_S" height="200">
 
 # Better Parallel-Zip
-This is a producer consumer based approach. We have considered a single producer and multiple consumers as the work of producer is much less than the work of consumers.
-The file is broken into chunks(pages of size 10MB) by the producer and these pages pages are zipped by the consumers.
+This is a producer-consumer based approach. We have considered a single producer and multiple consumers. This is because a producer is only required to create memory mapping for files whereas the consumers are required to compress the files.The file is broken into chunks(pages of size 10MB) by the producer and these pages pages are zipped by the consumers.
 
 <img src="https://drive.google.com/uc?export=view&id=1sJVWQPRXGkyDXMQ6nMWxvZgc9crkPzn4" height="300" >
 
 # Producer Consumer approach Implementation 
-## Finding optimum buffer-size and pagesize
+## Finding optimum buffersize and pagesize
 
 <img src="https://drive.google.com/uc?export=view&id=1mayJU4FXhwkSMCmghPzzBTaHiXLrjuo3" height="300" >
-Buffersize of 20 and pagesize of 10 MB is used in the algorithm(extimated from above graphs)
+### Inferences
+#### Varying only buffer size does not increase or decrease time.
+#### Takes more time for very large or very small page size.
 
 ## Varying number of consumer threads
 
 <img src="https://drive.google.com/uc?export=view&id=1dnbvZTK75g4J5syXFcjGx0uf8C10NcC9" height="300" >
-The number of threads are decided based on the number of available cores using get_nprocs().
+### Inferences
+#### Increasing the number of consumer threads to more than number of cores does not decrease time. 
+
 
 # Results
-Here is the comaparision between the three approaches. The producer consumer approach of Parallel zip gives much better results and takes comaparatively very less time.
+This is the performance comaparision between the three approaches. The producer consumer approach takes much less time.
 
 <img src="https://drive.google.com/uc?export=view&id=1AXYSHSz5EwBV5i4TRODA5u_EhnX_tkCB" height="300" >
 
-## Our approach vs (Pzip and WinZip and 7zip)
+## Our approach vs (WinZip,Zip command Linux,7zip)
 Workload: 5KB, 25KB, 25MB
 size after compression using:-
 1. Pzip implemented by us: 2.4KB, 15KB, 15MB
