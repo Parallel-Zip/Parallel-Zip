@@ -49,7 +49,8 @@ This is the performance comaparision between the three approaches. The producer 
 
 ## CPU utililzation
 Below GIF shows how all the 4 cores are utilized to perform parallel ziping in our algorithm. 
-![]()
+
+<img src="https://drive.google.com/uc?export=view&id=1Syt7VQN33AaM5-ugVnelJMxO8dWQ4g4x" height="400" width="800">
 
 Inferences
 1. All 4 cores get almost equal work to do.
