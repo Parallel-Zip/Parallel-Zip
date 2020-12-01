@@ -54,4 +54,4 @@ Compressed files are stored in "compressed" folder and you can find the test fil
 # Limitations and Scope
 Parallel zip has been implemented for text files and in future it can be extentded to zip directories and other formats like .jpeg</br>
 Approach can also be extended to unzip files parallely.</br>
-Although mmap helps to reduce overhead and equally divide the workload between thread, but it also results in waste of memory because the page size is an interger value.
+Although mmap helps to reduce overhead and equally divide the workload between thread, but it also results in waste of memory because space equal to integral multiple of page size is reserved for each file.
