@@ -6,6 +6,8 @@ make all
 </br>
 ./main h file1.txt file2.txt file3.txt
 </br>
+Compressed files are stored in "compressed" folder and you can find the test files in the "test_files" folder.
+
 ### The aim of the project is to zip the files parallely by building a parallelized version of non concurrent zip.
 # Sequential-Zip
 First we build a sequential zip using two encoding schemes, Huffmann and Run Length. All the code files related to sequential zip are included in the Week1 folder. 
@@ -48,8 +50,7 @@ size after compression using:-
 3. Zip command in Linux: 1.5KB, 11.3KB, 205.3KB
 4. 7zip: 1.44KB, 10.3KB, 14KB
 
-It can be seen that for larger files, their compression algorithm proved to be much better than ours, while there was no observable difference in the time taken by all the tools for zipping
-Compressed files are stored in "compressed" folder and you can find the test files in the "test_files" folder.
+It can be seen that for larger files, their compression algorithm proved to be much better than ours, while there was no observable difference in the time taken by all the tools for zipping.
 
 # Limitations and Scope
 Parallel zip has been implemented for text files and in future it can be extentded to zip directories and other formats like .jpeg</br>
