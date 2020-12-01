@@ -29,14 +29,14 @@ This is a producer-consumer based approach. We have considered a single producer
 ## Finding optimum buffersize and pagesize
 
 <img src="https://drive.google.com/uc?export=view&id=1mayJU4FXhwkSMCmghPzzBTaHiXLrjuo3" height="300" >
-## Inferences
+Inferences
 1. Varying only buffer size does not increase or decrease time.
 2. Takes more time for very large or very small page size.
 
 ## Varying number of consumer threads
 
 <img src="https://drive.google.com/uc?export=view&id=1dnbvZTK75g4J5syXFcjGx0uf8C10NcC9" height="300" >
-## Inferences
+Inferences
 1. Increasing the number of consumer threads to more than number of cores does not decrease time. 
 
 
