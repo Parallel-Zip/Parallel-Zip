@@ -47,6 +47,15 @@ This is the performance comaparision between the three approaches. The producer 
 
 <img src="https://drive.google.com/uc?export=view&id=1AXYSHSz5EwBV5i4TRODA5u_EhnX_tkCB" height="300" >
 
+## CPU utililzation
+Below GIF shows how all the 4 cores are utilized to perform parallel ziping in our algorithm. 
+![]()
+
+Inferences
+1. All 4 cores get almost equal work to do.
+2. Equal division of work between threads solves the <b>Straggler Problem</b>.
+3. This is the reason why performance of this algorithm in terms of compression time is comparable to time taken by Winzip or 7zip(for the the same workload).
+
 ## Our approach vs (WinZip,Zip command Linux,7zip)
 Workload: 5KB, 25KB, 25MB
 size after compression using:-
