@@ -1,5 +1,6 @@
 ### Usage Instructions
 
+
 To zip 3 files(file1, file2, file3) using huffmann encoding follow below steps.
 </br>
 make all
